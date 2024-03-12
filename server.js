@@ -1,11 +1,14 @@
-
+// Imorting and creating express
 const express= require('express');
 const app=express();
 
+// Importing dotenv 
 require("dotenv").config();
 
+// Midelware 
 app.use(express.json());
 
+// Connection to the database through the connectDB file
 const connectDB= require('./config/connectDB')
 connectDB();
 

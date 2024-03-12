@@ -4,11 +4,11 @@ const Contact = require('../models/Contact');
 
 
 const router = express.Router();
- 
+//  Testing
 router.get('/test',(req,res)=>{
     res.send("Hello world, I'm here!!!");
 });
-
+// Adding
 router.post("/add", async (req,res)=>{
     try {
         const {name, email, phone} = req.body;
@@ -19,7 +19,7 @@ router.post("/add", async (req,res)=>{
         res.status(400).send({message:"Can't added contact!!",error})
     }
 });
-
+// Get all
 router.get('/all', async (req,res)=>{
     try {
         const listContact= await Contact.find();
@@ -29,7 +29,7 @@ router.get('/all', async (req,res)=>{
         res.status(400).send({msg:"Can't get, sorry!"});        
     }
 });
-
+// Get by Id
 router.get('/:id', async (req,res)=>{
     try {
        const contactToGet = await Contact.findOne({_id: req.params.id});
@@ -38,7 +38,7 @@ router.get('/:id', async (req,res)=>{
         res.status(400).send({msg:"id doesn't exist", error});    
     }
 });
-
+// Delete 
 router.delete('/:_id', async (req,res)=>{
     try {
        const { _id } = req.params;
@@ -48,7 +48,7 @@ router.delete('/:_id', async (req,res)=>{
         res.status(400).send({msg:"Can't delete contact with this id !", error});    
     }
 });
-
+// Update
 router.put('/:_id', async (req,res)=>{
     try {
        const { _id } = req.params;
