@@ -22,9 +22,9 @@ router.post("/add", async (req,res)=>{
 // Get all
 router.get('/all', async (req,res)=>{
     try {
-        const listContact= await Contact.find();
+        const listContacts= await Contact.find();
         res.status(200)
-        .send({msg: "Contacts received", listContact});            
+        .send({msg: "Contacts received", listContacts});            
     } catch (error) {
         res.status(400).send({msg:"Can't get, sorry!"});        
     }
