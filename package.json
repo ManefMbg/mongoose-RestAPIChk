@@ -4,7 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "front": "cd client && npm start",
+    "back": "nodemon server",
+    "dev": "concurrently \"npm run front\" \"npm run back\""
   },
   "keywords": [],
   "author": "",
@@ -12,8 +15,7 @@
   "dependencies": {
     "concurrently": "^8.2.2",
     "express": "^4.18.3",
-    "mongoose": "^8.2.1",
-    "react-redux": "^9.1.0"
+    "mongoose": "^8.2.1"
   },
   "devDependencies": {
     "dotenv": "^16.4.5",
